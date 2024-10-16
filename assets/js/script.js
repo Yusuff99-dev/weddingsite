@@ -504,105 +504,6 @@
             $el.ripples('drop', x, y, dropRadius, strength);
         }, 400);
     }
-    
-
-
-    /*------------------------------------------
-        = GOOGLE MAP
-    -------------------------------------------*/
-    function map() {
-
-        var locations = [
-            ['Hotel royal international khulna ', 22.8103888, 89.5619609,1],
-            ['City inn khulna', 22.820884, 89.551216,2],
-        ];
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: new google.maps.LatLng( 22.8103888, 89.5619609),
-            zoom: 12,
-            scrollwheel: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-
-        });
-
-        var infowindow = new google.maps.InfoWindow();
-
-        var marker, i;
-
-        for (i = 0; i < locations.length; i++) {
-                marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map,
-                icon:'images/map-marker.png'
-            });
-
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-        }
-    };
-
-
-    /*------------------------------------------
-        = RSVP FORM SUBMISSION
-    -------------------------------------------*/
-    if ($("#rsvp-form").length) {
-        $("#rsvp-form").validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
-                email: "required",
-
-                guest: {
-                    required: true
-                },
-
-                events: {
-                    required: true
-                }
-
-            },
-
-            messages: {
-                name: "Please enter your name",
-                email: "Please enter your email",
-                guest: "Select your number of guest",
-                events: "Select your event list"
-            },
-
-            submitHandler: function (form) {
-                $("#loader").css("display", "inline-block");
-                $.ajax({
-                    type: "POST",
-                    url: "mail.php",
-                    data: $(form).serialize(),
-                    success: function () {
-                        $( "#loader").hide();
-                        $( "#success").slideDown( "slow" );
-                        setTimeout(function() {
-                        $( "#success").slideUp( "slow" );
-                        }, 3000);
-                        form.reset();
-                    },
-                    error: function() {
-                        $( "#loader").hide();
-                        $( "#error").slideDown( "slow" );
-                        setTimeout(function() {
-                        $( "#error").slideUp( "slow" );
-                        }, 3000);
-                    }
-                });
-                return false; // required to block normal submit since you used ajax
-            }
-
-        });
-    }
-
 
     /*==========================================================================
         WHEN DOCUMENT LOADING
@@ -615,7 +516,7 @@
 
             smallNavFunctionality();
 
-            smoothScrolling($("#navbar > ul > li > a[href^='#']"), $(".site-header .navigation").innerHeight());
+            smoothScrolling( $("#navbar > ul > li > a[href^='#'], .wedding-announcement .enter-btn"), $(".site-header .navigation").innerHeight())
 
 
         });
