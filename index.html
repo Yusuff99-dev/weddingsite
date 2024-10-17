@@ -83,13 +83,13 @@
                     <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav">
-                            <li class="menu-item-has-children">
+                            <li>
                                 <a href="#Home">Home</a>
                             </li>
                             <li><a href="#Details">Details</a></li>
                             <li><a href="#Itinerary">Itinerary</a></li>
                             <li><a href="#Venues">Venues</a></li>
-                            <li><a href="#Travel Tips">Travel Tips</a></li>
+                            <li><a href="#TravelTips">Travel Tips</a></li>
 
                             <li><a href="#rsvp">RSVP</a></li>
                         </ul>
@@ -124,28 +124,20 @@
 
                 <!-- start gift-registry-section -->
 
-                <section class="gift-registry-section section-padding">
+                <section name="Details" class="gift-registry-section section-padding">
                     <div class="container">
                       <div class="row details justify-content-center"> <div class="col col-lg-6 col-lg-offset-3"> <div class="section-title-s2"> <h2>Details</h2> </div> </div> </div>
                       <div class="row justify-content-center">
                         <div class="col-md-4 grid">
                           <img src="assets/images/hanger.png" alt="Image 1">
-                        </div>
-                        <div class="col-md-4 grid">
-                          <img src="assets/images/gift.png" alt="Image 3">
-                        </div>
-                        <div class="col-md-4 grid">
-                          <img src="assets/images/stroller.png" alt="Image 5">
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-md-4 grid">
                           <p>Moderate effort required <b>(Cocktail)</b>- T-Shirts will be denied entry and Polo-Shirts will need to give a sufficient rendition of "Nessun Dorma" in order to remain at the reception </p>
                         </div>
                         <div class="col-md-4 grid">
+                          <img src="assets/images/gift.png" alt="Image 3">
                           <p>Your presence is present enough - but should you wish to gift something, <b>we will make space at the reception</b>, please get in touch with Kate's mother <a href="mailto:">Caroline Warnock</a> to avoid any double ups.</p>
                         </div>
                         <div class="col-md-4 grid">
+                          <img src="assets/images/stroller.png" alt="Image 5">
                           <p>As much as we adore your little ones, <b>grown-ups only this time!</b> (We promise it's nothing too wild... maybe.)</p>
                         </div>
                       </div>
@@ -232,29 +224,24 @@
 
         <!-- start gift-registry-section -->
 
-        <section class="gift-registry-section section-padding" style="background-color: #04302D;">
+        <section id="TravelTips"class="gift-registry-section section-padding" style="background-color: #04302D;">
             <div class="container">
               <div class="row details justify-content-center"> <div class="col col-lg-6 col-lg-offset-3"> <div class="section-title-s2"> <h2>Travel Tips</h2> </div> </div> </div>
               <div class="row justify-content-center">
                 <div class="col-md-4 grid">
                   <img src="assets/images/plane.png" alt="Image 1">
+                  <p>You can get from Melbourne Airport to the City either by car or bus, the <a href="https://www.skybus.com.au/">SkyBus</a> is $20 each way and runs direct from the airport to Southern Cross Station in the middle of Melbourne City. There are also Uber/Taxi ranks at the airport for around $70-100 depending on your time of arrival.</p>
+
                 </div>
                 <div class="col-md-4 grid">
                   <img src="assets/images/tram.png" alt="Image 3">
+                  <p>St John's Anglican Church is on Toorak Road, which runs straight through to The Royce, St Kilda, you can either hop in a Taxi/Uber or take the 58 West-Coburg - Toorak tram and get off at Toorak Rd/St Kilda Rd stop #22.  </p>
+
                 </div>
                 <div class="col-md-4 grid">
                   <img src="assets/images/hotel.png" alt="Image 5">
-                </div>
-              </div>
-              <div class="row justify-content-center">
-                <div class="col-md-4 grid">
-                  <p>You can get from Melbourne Airport to the City either by car or bus, the <a href="https://www.skybus.com.au/">SkyBus</a> is $20 each way and runs direct from the airport to Southern Cross Station in the middle of Melbourne City. There are also Uber/Taxi ranks at the airport for around $70-100 depending on your time of arrival.</p>
-                </div>
-                <div class="col-md-4 grid">
-                  <p>St John's Anglican Church is on Toorak Road, which runs straight through to The Royce, St Kilda, you can either hop in a Taxi/Uber or take the 58 West-Coburg - Toorak tram and get off at Toorak Rd/St Kilda Rd stop #22.  </p>
-                </div>
-                <div class="col-md-4 grid">
                   <p>The Royce Hotel have very kindly offered us a discount rate for any wedding guests that wish to stay overnight - you can access the discounted booking link <a>HERE</a></p>
+
                 </div>
               </div>
             </div>
@@ -269,11 +256,9 @@
                     <div class="col col-xs-12">
                         <div class="rspv-form">
                             <h3>Are you attending?</h3>
-                            <p>Please kindly response before [ROYCE NUMBERS DEADLINE]</p>
-                            <div class="left-flower"></div>
-                            <div class="right-flower"></div>
+                            <p>Please respond before 29.09.25</p>
                             <form id="rsvp-form" class="clearfix form validate-rsvp-form row" method="POST" action="https://formspree.io/f/mldeepda">
-                                <div>
+                                <div style="text-align: center; font-size: 1.75rem;">
                                     <label for="attending-yes">Yes</label>
                                     <input type="radio" id="attending-yes" name="attending" value="yes" required>
                                     <label for="attending-no">No</label>

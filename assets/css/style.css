@@ -252,7 +252,7 @@ img {
   font-size: 3rem;
   color: #E8CA47;
   margin: 0;
-  padding-top: 1.1em;
+  padding-top: 5rem;
   text-transform: capitalize;
   position: relative;
 }
@@ -1004,8 +1004,7 @@ img {
 @media (max-width: 991px) {
   .site-header #navbar > ul > li a {
     display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 1.75rem;
   }
   .site-header #navbar > ul > li .sub-menu li {
     border-bottom: 1px solid #e6e6e6;
@@ -1767,7 +1766,9 @@ img {
   height: 179px;
   float: left;
   display: table;
-  border: 2px solid #b19a56;
+  border: 1px solid #b19a56;
+  border-style: double;
+  border-width: 7px;
 }
 
 @media (max-width: 991px) {
@@ -2046,7 +2047,7 @@ img {
   background-image: url("../images/border.png"); /* Replace with your ornament's path */
   background-repeat: no-repeat;
   background-position: center; /* Adjust as needed */
-  background-size: contain; /* Adjust as needed */
+  background-size: cover; /* Adjust as needed */
   padding: 65px 120px; /* Add padding to create space for the ornament */
 
 }
@@ -2087,6 +2088,7 @@ img {
 .rsvp-section h3,
 .rsvp-section p {
   position: relative;
+  padding-top: 20px;
 }
 
 .rsvp-section h3 {
@@ -2105,8 +2107,8 @@ img {
 
 .rsvp-section p {
   font-size: 14px;
-  font-size: 0.875rem;
-  font-style: italic;
+  font-size: 1.5rem;
+  font-style: bold;
   margin: 0;
 }
 
@@ -2183,6 +2185,24 @@ img {
   font-family: "Poiret One", sans-serif;
 }
 
+
+
+input[type="radio"] {
+  transform: scale(1.5); /* Adjust the scale factor as needed */
+}
+
+input[type="radio"]::before {
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]:checked {
+  accent-color: #e8ca47;
+}
+
+
 /*--------------------------------------------------------------
 #1.4	gift-registry-section 
 --------------------------------------------------------------*/
@@ -2199,6 +2219,7 @@ img {
  image and text vertically */
   text-align: center;
   padding: 25px;
+  max-width: 33%;
 }
 
 .gift-registry-section img {
@@ -2215,12 +2236,14 @@ img {
 @media (min-width: 768px) {
   .gift-registry-section .grid {
     width: 33.33%; /* Distribute columns evenly */
+    display: flex;
   }
 }
 
 /* Adjust for smaller screens if needed */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .gift-registry-section .grid {
+    display: contents;
     width: 100%; /* Stack columns vertically */
   }
 }
